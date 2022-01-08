@@ -14,6 +14,7 @@ import { MiddleTitleComponent } from './middle-title/middle-title.component';
 import { BoardComponent } from './board/board.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { ErrorUrlComponent } from './error-url/error-url.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ErrorUrlComponent } from './error-url/error-url.component';
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    HttpClientModule
   ],
   providers: [BoardComponent, LoginPageComponent],
   bootstrap: [AppComponent]
