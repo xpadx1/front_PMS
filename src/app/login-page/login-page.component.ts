@@ -1,5 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
+import { AuthService } from '../auth.service';
 import { LoginService } from '../shared/login.service';
 
 @Component({
@@ -9,21 +12,39 @@ import { LoginService } from '../shared/login.service';
 })
 export class LoginPageComponent implements OnInit {
 
-  loginSample = "Arsenii"
-  pswSample = 1234
+  loginToken: Object = {};
+  userEmail = new BehaviorSubject("");
 
   constructor(
     public loginService: LoginService,
-    private http: HttpClient
+    private http: HttpClient,
+    private auth: AuthService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
-    this.http.get('http://localhost:3000/users').subscribe(res => console.log(res))
     this.loginService.isLoginPage.next(true)
   }
 
   ngOnDestroy(){
     this.loginService.isLoginPage.next(false)
   }
+
+  loginUser(event: any){
+    const target = event.target;
+    const userName = target.querySelector('#userName').value
+    const email = target.querySelector('#email').value
+    const password = target.querySelector('#password').value
+
+    this.auth.getUserDetails(userName, email, password).subscribe(data => {
+      if(data.hasOwnProperty('token')){
+        this.userEmail.next(email);
+        this.router.navigate(['/board'])
+        return;
+      }
+      window.alert('Incorrect username or password')
+    })
+    
+    }
 
 }

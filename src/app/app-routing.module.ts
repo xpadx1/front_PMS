@@ -5,12 +5,14 @@ import { MainComponent } from './main/main.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { BoardComponent } from './board/board.component';
 import { ErrorUrlComponent } from './error-url/error-url.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/board', pathMatch: 'full'},
   { path: 'board', component: BoardComponent},
   { path: 'login', component: LoginPageComponent},
   { path: 'todos', component: ToDosComponent},
+  { path: 'registration', component: RegistrationComponent},
   { path: '**', component: ErrorUrlComponent}
 ];
 

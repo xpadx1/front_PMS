@@ -5,15 +5,20 @@
             <b>Login</b>
         </div>
         <hr>
-        <div class="input-wrapper">
-            <input class = "email" placeholder="Email">
-            <input class = "password" placeholder="Password">
-        </div>
+        <form (submit) = "loginUser($event)"class="input-wrapper">
+            <input class = "userName" placeholder="Username" id = "userName">
+            <input 
+                type="password" 
+                id="password" 
+                placeholder="Password"
+                minlength="8" 
+                required>
+            <input class = "email" placeholder="Email" id = "email">
+            <input type = "submit" value = "Login">
+        </form>
         <div class="button-wrapper">
-            <a class = "forgot">Forgot Password?</a>
-            <button class = "login-btn" [routerLink]="'/board'">Login</button>
+            <a class = "forgot" [routerLink]="'/registration'">Don`t have an account? Sign up!</a>
+            <!-- <button class = "login-btn" [routerLink]="'/board'">Login</button> -->
         </div>
     </div>
-
-
 </div>

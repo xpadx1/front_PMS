@@ -34,13 +34,11 @@ export class MainComponent implements OnInit {
 }
   ngOnInit(): void {
     this.loginService.isLoginPage.subscribe(res => this.isLoginPage = res)
-    console.log(this.isLoginPage)
   }
 
   over(event?: any){
     this.showLogout = !this.showLogout
   }
 
-  
 
 }

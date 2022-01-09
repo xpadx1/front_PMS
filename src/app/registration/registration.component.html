@@ -1,0 +1,32 @@
+
+<div class="login-page">
+    <div class="login-box">
+        <div class="text-box">
+            <b>Register</b>
+        </div>
+        <hr>
+        <form (submit) = "registerUser($event)"class="input-wrapper" autocomplete="off">
+            <input class = "userName" placeholder="Username" id = "userName" autocomplete="off">
+            <input class = "email" placeholder="Email" id = "email">
+            <input 
+                type="password" 
+                id="password" 
+                placeholder="Password"
+                minlength="8" 
+                required
+                autocomplete="off">
+            <input type = "password" placeholder="Repeat Password" id = "passwordRep">
+            <input 
+                class = "checkbox"
+                type = "checkbox" 
+                [checked] = "userType" 
+                (change)="setUserType()">
+                <b class = "reg-text">Register as a teamlead</b>
+            <input type = "submit" value = "Registrate">
+        </form>
+        <div class="button-wrapper">
+            <a class = "forgot" [routerLink]="'/login'">Sign in</a>
+            <!-- <button class = "login-btn" [routerLink]="'/board'">Login</button> -->
+        </div>
+    </div>
+</div>

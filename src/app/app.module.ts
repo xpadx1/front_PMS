@@ -15,6 +15,7 @@ import { BoardComponent } from './board/board.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { ErrorUrlComponent } from './error-url/error-url.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
     MiddleTitleComponent,
     BoardComponent,
     LoginPageComponent,
-    ErrorUrlComponent
+    ErrorUrlComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
