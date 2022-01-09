@@ -7,6 +7,7 @@ import { ToDo } from './todo.model';
 export class DataService {
 
   todos: ToDo[] = [
+    new ToDo('Your personal planner', true),
   ];
 
   constructor() { }

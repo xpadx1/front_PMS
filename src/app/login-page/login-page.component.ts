@@ -37,8 +37,10 @@ export class LoginPageComponent implements OnInit {
     const password = target.querySelector('#password').value
 
     this.auth.getUserDetails(userName, email, password).subscribe(data => {
+      const res: any = data;
       if(data.hasOwnProperty('token')){
         this.userEmail.next(email);
+        localStorage.setItem('accountId', res.id)
         this.router.navigate(['/board'])
         return;
       }

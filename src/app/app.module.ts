@@ -16,6 +16,7 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { ErrorUrlComponent } from './error-url/error-url.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RegistrationComponent } from './registration/registration.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { RegistrationComponent } from './registration/registration.component';
     FormsModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    HttpClientModule
+    HttpClientModule,
+    DragDropModule
   ],
   providers: [BoardComponent, LoginPageComponent],
   bootstrap: [AppComponent]

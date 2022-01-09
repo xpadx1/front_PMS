@@ -40,5 +40,9 @@ export class MainComponent implements OnInit {
     this.showLogout = !this.showLogout
   }
 
+  redirect(){
+
+  }
+
 
 }

@@ -5,6 +5,7 @@ import { NgForm } from '@angular/forms';
 import { from } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
 import { EditTodoComponent } from '../edit-todo/edit-todo.component';
+import { BoardComponent } from '../board/board.component';
 
 @Component({
   selector: 'app-to-dos',
@@ -16,7 +17,11 @@ export class ToDosComponent implements OnInit {
   todos!: ToDo[]
   showValidationErrors: boolean = false
 
-  constructor(private dataService: DataService, private dialog: MatDialog) { }
+  constructor(
+    private dataService: DataService, 
+    private dialog: MatDialog,
+    private boardComponent: BoardComponent
+  ) { }
 
   ngOnInit(): void {
     this.todos = this.dataService.getAllTodos();
