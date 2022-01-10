@@ -17,6 +17,7 @@ import { ErrorUrlComponent } from './error-url/error-url.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RegistrationComponent } from './registration/registration.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { BoardTaskComponent } from './board-task/board-task.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     BoardComponent,
     LoginPageComponent,
     ErrorUrlComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    BoardTaskComponent
   ],
   imports: [
     BrowserModule,

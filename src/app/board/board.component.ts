@@ -3,6 +3,13 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
 import { DataService } from '../shared/data.service';
 import { ToDo } from '../shared/todo.model';
 
+export interface Task{
+  type: string,
+  title: string,
+  description: string,
+  id: number
+}
+
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
@@ -10,10 +17,10 @@ import { ToDo } from '../shared/todo.model';
 })
 export class BoardComponent implements OnInit {
 
-    open = ['Wake up', 'Do job']
-    inProgress = []
-    readyForTesting = []
-    done = ['Jerk']
+    open: Task[] = [{type: 'Open', title: 'Task-1', description: 'Finish Course Work', id: 2}]
+    inProgress: Task[] = []
+    readyForTesting: Task[] = []
+    done: Task[] = []
   
 
   constructor(public dataService: DataService) { }
